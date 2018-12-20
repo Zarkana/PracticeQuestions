@@ -41,16 +41,45 @@ namespace Practice_Questions
             //Console.WriteLine(urlified);
 
 
-            //int n = 99999;
-            //int m = 9999;
+            //int n = 2;
+            //int m = 5;
             //Console.WriteLine(Multiply(n, m));
+            //Console.WriteLine(InneficientMultiply(n, m));
 
+            //int[,] matrix = new int[4, 4] { { 2, 1, 9, 3 }, { 1, 2, 3, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 2 } };
 
-            int a = 10;
-            int b = 12;
-            Console.WriteLine("OR: " + BitWiseOperation(BitWiseOperator.Or, a, b));
-            Console.WriteLine("AND: " + BitWiseOperation(BitWiseOperator.And, a, b));
-            Console.WriteLine("XOR: " + BitWiseOperation(BitWiseOperator.Xor, a, b));
+            Console.WriteLine("Matrix 1");
+            //int[,] matrix = new int[3,3] { { 1,0,1 }, { 1,1,1 }, { 1,0,1} };
+            int[,] matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
+            printMatrix(matrix);
+
+            //matrix = rotateMatrix(matrix);
+            ////printMatrix(matrix);
+
+            //matrix = rotateMatrix(matrix);
+            ////printMatrix(matrix);
+            
+            //matrix = rotateMatrix(matrix);
+            ////printMatrix(matrix);
+
+            //matrix = rotateMatrix(matrix);
+            //printMatrix(matrix);            
+
+            //matrix = zeroMatrix(matrix);
+            //printMatrix(matrix);
+
+            //Console.WriteLine("Matrix 2");
+            //matrix = new int[3, 5] { { 2, 1, 1, 1, 1 }, { 1, 1, 3, 1, 0 }, { 1, 3, 2, 1, 0 } };
+            //printMatrix(matrix);
+
+            matrix = zeroMatrix(matrix);
+            printMatrix(matrix);
+
+            //int a = 10;
+            //int b = 12;
+            //Console.WriteLine("OR: " + BitWiseOperation(BitWiseOperator.Or, a, b));
+            //Console.WriteLine("AND: " + BitWiseOperation(BitWiseOperator.And, a, b));
+            //Console.WriteLine("XOR: " + BitWiseOperation(BitWiseOperator.Xor, a, b));
 
 
             //Console.WriteLine(Multiply(30, 30));
@@ -73,6 +102,91 @@ namespace Practice_Questions
             Assert.AreEqual("abc", "abc");
         }
 
+
+        public static void printMatrix(int[,] mat)
+        {
+            int rows = mat.GetLength(0);
+            int cols = mat.GetLength(1);
+            for (int row = 0; row < rows; row++)
+            {
+                
+
+                for (int col = 0; col < cols; col++)
+                {
+                    Console.Write(mat[row,col]);
+                    
+                }                
+                Console.WriteLine("");
+            }
+            Console.WriteLine("");
+        }
+
+        public static int[,] rotateMatrix(int[,] mat)
+        {
+            int n = mat.GetLength(0);
+            Console.WriteLine("Matrix rotated");
+            for (int layer = 0; layer < n / 2; layer++)
+            {
+                for(int i = layer; i < n - 1 - layer; i++)
+                {
+                    int temp = mat[layer,i];
+                    mat[layer, i] = mat[i, n - 1 - layer];
+                    mat[i, n - 1 - layer] = mat[n - 1 - layer, n - 1 - i];
+                    mat[n - 1 - layer, n - 1 - i] = mat[n - 1 - i, layer];
+                    mat[n - 1 - i, layer] = temp;
+                }
+            }
+
+            return mat;
+        }
+
+        public static int[,] zeroMatrix(int[,] mat)
+        {
+            HashSet<int> isSet = new HashSet<int>();
+            int height = mat.GetLength(0);
+            int width = mat.GetLength(1);
+
+            Console.WriteLine("Zeromatrixed");
+            for (int row = 0; row < height; row++)
+            {
+                for(int col = 0; col < width; col++)
+                {
+                    if(!isSet.Contains(calcIndex(row, col, width)))
+                    {
+                        if(mat[row,col] == 0)
+                        {
+                            //set entire row to zero
+                            for(int c = 0; c < width; c++)
+                            {
+                                if(mat[row, c] != 0)
+                                {                                
+                                    mat[row, c] = 0;
+                                    isSet.Add(calcIndex(row, c, width));
+                                }
+                            }
+                            //set entire column to zero
+                            for(int r = 0; r < height; r++)
+                            {
+                                if (mat[r, col] != 0)
+                                {
+                                    mat[r, col] = 0;
+                                    isSet.Add(calcIndex(r, col, width));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return mat;
+        }
+
+        public static int calcIndex(int row, int col, int width)
+        {
+            //return (row + 1) * (col + 1) - 1;
+            return (width * row) + col;
+        }
+
         public static int BitWiseOperation(BitWiseOperator operatorType, int a, int b)
         {
             switch (operatorType)
@@ -90,7 +204,6 @@ namespace Practice_Questions
             }
             return 0;
         }
-
 
         public static int Multiply(int n, int m)
         {
@@ -110,6 +223,32 @@ namespace Practice_Questions
                 //make m equal to itself divided in half
                 m = m >> 1;
             }
+            return answer;
+        }
+
+        public static int InneficientMultiply(int n, int m)
+        {
+            int answer = 0;
+            int twosin = m / 2;//how many twos are in
+
+            //while(m > 1)
+            //{
+            //    if(twosin > 0)
+            //    {
+            //        answer += n << 1;
+            //        twosin--;
+            //        m--;
+            //        m--;
+            //    }else if(m )
+            //    {
+            //        answer += n;
+            //    }
+
+
+                
+                
+            //}
+
             return answer;
         }
 
