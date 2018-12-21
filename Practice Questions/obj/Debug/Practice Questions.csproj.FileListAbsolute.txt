@@ -11,3 +11,18 @@ C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Pr
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\NUnit3.TestAdapter.pdb
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.engine.dll
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.engine.api.dll
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\nunit.engine.dll
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\nunit.engine.api.dll
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\Practice Questions.exe.config
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\Practice Questions.exe
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\Practice Questions.pdb
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\nunit.framework.dll
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\nunit.framework.pdb
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\bin\Debug\nunit.framework.xml
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.csprojAssemblyReference.cache
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.csproj.CoreCompileInputs.cache
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.csproj.CopyComplete
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.exe
+C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.pdb
