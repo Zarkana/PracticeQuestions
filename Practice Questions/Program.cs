@@ -16,6 +16,11 @@ namespace Practice_Questions
         {
 
 
+            Console.WriteLine(compressString2("aaabbc"));
+            Console.WriteLine(compressString2("abbccc"));
+            Console.WriteLine(compressString2("f"));
+            Console.WriteLine(compressString2("fffggbbc"));
+
             //Console.WriteLine(compressString("aaabbc"));
             //Console.WriteLine(compressString("abbccc"));
             //Console.WriteLine(compressString("f"));
@@ -29,7 +34,22 @@ namespace Practice_Questions
             //Console.WriteLine("abb" + " aaa " + isOneEditAway("abb", "aaa"));
             //Console.WriteLine("aaaa" + " aba " + isOneEditAway("aaaa", "aba"));
 
-            //Console.WriteLine(isPalindrome("illuminati"));            
+            string word = "illuminati";
+            //Console.WriteLine(word + " " + isPalindrome(word));
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            word = "catac";
+            //Console.WriteLine(word + " " + isPalindrome(word));
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            word = "aa";
+            //Console.WriteLine(word + " " + isPalindrome(word));
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            word = "abc";
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            word = "aba";
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            word = "ababababababa";
+            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+
 
             //char[] str = PrepUrlify("How do you do when I s a y things?");
             //int trueLength = GetTrueLength(str);
@@ -252,6 +272,40 @@ namespace Practice_Questions
             return answer;
         }
 
+        public static string compressString2(string a)
+        {
+            char[] orig = a.ToCharArray();
+            char[] compressed = new char[orig.Length * 2];
+            char currChar = orig[0];
+            int compIndex = 0;
+            int currCharCount = 0;
+
+            for(int i = 0; i < orig.Length; i++)
+            {
+                //if (currCharCount == 0)
+                //{
+                //    currChar = orig[i];
+                //    currCharCount++;
+                //}else 
+                if (orig[i] == currChar)
+                {
+                    currCharCount++;
+                }else
+                {
+                    compressed[compIndex] = currChar;
+                    compressed[compIndex + 1] = currCharCount.ToString().ToCharArray()[0];
+                    compIndex += 2;
+
+                    currChar = orig[i];
+                    currCharCount = 1;
+                }
+            }
+            compressed[compIndex] = currChar;
+            compressed[compIndex + 1] = currCharCount.ToString().ToCharArray()[0];
+
+            return new String(compressed);
+        }
+
         public static string compressString(string str)
         {
             int count = 0;//no digit has been counted
@@ -358,6 +412,27 @@ namespace Practice_Questions
                 return false;
             }        
             return true;
+        }
+
+        public static bool isPalindromeEnhanced(string str)
+        {
+            int odd = 0;
+            HashSet<char> freq = new HashSet<char>();
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                if (!freq.Contains(str[i]))//if didn't contain
+                {
+                    freq.Add(str[i]);
+                    odd++;
+                }else//if did contain
+                {
+                    freq.Remove(str[i]);
+                    odd--;
+                }
+            }
+
+            if(odd > 1) { return false; } else { return true; }
         }
 
 
