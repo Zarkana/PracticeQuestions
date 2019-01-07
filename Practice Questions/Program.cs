@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,6 +96,8 @@ namespace Practice_Questions
             matrix = zeroMatrix(matrix);
             printMatrix(matrix);
 
+
+            CollectionsPractice();
             //int a = 10;
             //int b = 12;
             //Console.WriteLine("OR: " + BitWiseOperation(BitWiseOperator.Or, a, b));
@@ -121,7 +124,6 @@ namespace Practice_Questions
         {
             Assert.AreEqual("abc", "abc");
         }
-
 
         public static void printMatrix(int[,] mat)
         {
@@ -193,6 +195,7 @@ namespace Practice_Questions
                                     isSet.Add(calcIndex(r, col, width));
                                 }
                             }
+                            break;
                         }
                     }
                 }
@@ -602,5 +605,158 @@ namespace Practice_Questions
             }
             return true;
         }
+
+        /// <summary>
+        /// System.Collections Namespace
+        /// The System.Collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
+        /// from https://docs.microsoft.com/en-us/dotnet/api/system.collections?view=netframework-4.7.2
+        /// </summary>
+        public static void CollectionsPractice()
+        {
+            //CLASSES
+
+            /// <summary> 
+            /// ArrayList	
+            /// Implements the IList interface using an array whose size is dynamically increased as required.
+            /// </summary>
+            ArrayList myAL = new ArrayList();
+            myAL.Add(1);
+            myAL.Add("Custom Text");
+            PrintValues(myAL);
+
+            /// <summary> 
+            /// BitArray	
+            /// Manages a compact array of bit values, which are represented as Booleans, where true indicates that the bit is on (1) and false indicates the bit is off (0).
+            /// </summary>
+
+            /// <summary> 
+            /// CaseInsensitiveComparer	
+            /// Compares two objects for equivalence, ignoring the case of strings.
+            /// </summary>
+
+            /// <summary> 
+            /// CaseInsensitiveHashCodeProvider	
+            /// Supplies a hash code for an object, using a hashing algorithm that ignores the case of strings.
+            /// </summary>
+
+            /// <summary> 
+            /// CollectionBase	
+            /// Provides the abstract base class for a strongly typed collection.
+            /// </summary>
+
+            /// <summary> 
+            /// Comparer	
+            /// Compares two objects for equivalence, where string comparisons are case-sensitive.
+            /// </summary>
+
+            /// <summary> 
+            /// DictionaryBase	
+            /// Provides the abstract base class for a strongly typed collection of key/value pairs.
+            /// </summary>
+
+            /// <summary> 
+            /// Hashtable	
+            /// Represents a collection of key/value pairs that are organized based on the hash code of the key.
+            /// </summary>
+
+            /// <summary> 
+            /// Queue	
+            /// Represents a first-in, first-out collection of objects.
+            /// </summary>
+
+            /// <summary> 
+            /// ReadOnlyCollectionBase	
+            /// Provides the abstract base class for a strongly typed non-generic read-only collection.
+            /// </summary>
+
+            /// <summary> 
+            /// SortedList	
+            /// Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.
+            /// </summary>
+
+            /// <summary> 
+            /// Stack	
+            /// Represents a simple last-in-first-out (LIFO) non-generic collection of objects.
+            /// </summary>
+
+            /// <summary> 
+            /// StructuralComparisons	
+            /// Provides objects for performing a structural comparison of two collection objects.
+            /// </summary>
+
+            // STRUCTS
+
+            /// <summary> 
+            /// DictionaryEntry	
+            /// Defines a dictionary key/value pair that can be set or retrieved.
+            /// </summary>
+            /// 
+
+            // INTERFACES
+
+            /// <summary> 
+            /// ICollection	
+            /// Defines size, enumerators, and synchronization methods for all nongeneric collections.
+            /// </summary>
+
+            /// <summary> 
+            /// IComparer	
+            /// Exposes a method that compares two objects.
+            /// </summary>
+
+            /// <summary> 
+            /// IDictionary	
+            /// Represents a nongeneric collection of key/value pairs.
+            /// </summary>
+
+            /// <summary> 
+            /// IDictionaryEnumerator	
+            /// Enumerates the elements of a nongeneric dictionary.
+            /// </summary>
+
+            /// <summary> 
+            /// IEnumerable	
+            /// Exposes an enumerator, which supports a simple iteration over a non-generic collection.
+            /// </summary>
+
+            /// <summary> 
+            /// IEnumerator	
+            /// Supports a simple iteration over a non-generic collection.
+            /// </summary>
+
+            /// <summary> 
+            /// IEqualityComparer	
+            /// Defines methods to support the comparison of objects for equality.
+            /// </summary>
+
+            /// <summary> 
+            /// IHashCodeProvider	
+            /// Supplies a hash code for an object, using a custom hash function.
+            /// </summary>
+
+            /// <summary> 
+            /// IList	
+            /// Represents a non-generic collection of objects that can be individually accessed by index.
+            /// </summary>
+
+            /// <summary> 
+            /// IStructuralComparable	
+            /// Supports the structural comparison of collection objects.
+            /// </summary>
+
+            /// <summary> 
+            /// IStructuralEquatable	
+            /// Defines methods to support the comparison of objects for structural equality.
+            /// </summary>
+
+        }
+
+        public static void PrintValues(IEnumerable myList)
+        {
+            foreach (Object obj in myList)
+                Console.WriteLine("{0}", obj);
+            Console.WriteLine();
+        }
+
     }
 }
