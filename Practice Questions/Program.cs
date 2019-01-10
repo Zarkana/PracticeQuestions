@@ -96,6 +96,9 @@ namespace Practice_Questions
             matrix = zeroMatrix(matrix);
             printMatrix(matrix);
 
+            matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
+            matrix = zeroMatrixImproved(matrix);
+            printMatrix(matrix);
 
             CollectionsPractice();
             //int a = 10;
@@ -117,6 +120,9 @@ namespace Practice_Questions
             //Console.WriteLine(IsUniqueStrinAlt("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZa"));
             //Console.WriteLine(IsUniqueStrinAlt("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
 
+
+            Console.WriteLine(isRotation("rotation","ionrotat"));
+            Console.WriteLine(isRotation("rotation", "ionrott"));
         }
 
         [Test]
@@ -160,6 +166,44 @@ namespace Practice_Questions
             }
 
             return mat;
+        }
+
+        public static int[,] zeroMatrixImproved(int[,] mat)
+        {
+            List<int> rows = new List<int>();
+            List<int> cols = new List<int>();
+
+            int width = mat.GetLength(0);
+            int height = mat.GetLength(1);
+
+            for (int i = 0; i < height; i++)
+            {
+                for(int j = 0; j < width; j++)
+                {
+                    if(mat[i,j] == 0)
+                    {
+                        rows.Add(i);
+                        cols.Add(j);
+                    }
+                }
+            }
+
+            for(int i = 0; i < rows.Count; i++)//for every row with a zero
+            {
+                for(int j = 0; j < width; j++)//make each element in that row zero
+                {
+                    mat[rows[i], j] = 0;
+                }
+            }
+            for(int i= 0; i < cols.Count; i++)//for every col with a zero
+            {
+                for(int j = 0; j < height; j++)//make each element in that col zero
+                {
+                    mat[j, cols[i]] = 0;
+                }
+            }         
+
+            return mat; 
         }
 
         public static int[,] zeroMatrix(int[,] mat)
@@ -208,6 +252,16 @@ namespace Practice_Questions
         {
             //return (row + 1) * (col + 1) - 1;
             return (width * row) + col;
+        }
+
+        public static bool isRotation(string s1, string s2)
+        {
+            s2 += s2;
+            if (s2.Contains(s1))
+            {
+                return true;
+            }
+            return false;
         }
 
         public static int BitWiseOperation(BitWiseOperator operatorType, int a, int b)
