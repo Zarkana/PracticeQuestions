@@ -15,41 +15,23 @@ namespace Practice_Questions
 
         static void Main(string[] args)
         {
+            String wordToCount = "aa";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
+            wordToCount = "ab";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            Console.WriteLine(compressString2("aaabbc"));
-            Console.WriteLine(compressString2("abbccc"));
-            Console.WriteLine(compressString2("f"));
-            Console.WriteLine(compressString2("fffggbbc"));
+            wordToCount = "abc";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            //Console.WriteLine(compressString("aaabbc"));
-            //Console.WriteLine(compressString("abbccc"));
-            //Console.WriteLine(compressString("f"));
-            //Console.WriteLine(compressString("fffggbbc"));
+            wordToCount = "ramona";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            //Console.WriteLine("aa" + " aa " + isOneEditAway("aa", "aa"));
-            //Console.WriteLine("ab" + " aa " + isOneEditAway("ab", "aa"));
-            //Console.WriteLine("aa" + " aaa " + isOneEditAway("aa", "aaa"));
-            //Console.WriteLine("abb" + " aa " + isOneEditAway("abb", "aa"));
-            //Console.WriteLine("aaa" + " a " + isOneEditAway("aaa", "a"));
-            //Console.WriteLine("abb" + " aaa " + isOneEditAway("abb", "aaa"));
-            //Console.WriteLine("aaaa" + " aba " + isOneEditAway("aaaa", "aba"));
+            wordToCount = "abba zabba";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            string word = "illuminati";
-            //Console.WriteLine(word + " " + isPalindrome(word));
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
-            word = "catac";
-            //Console.WriteLine(word + " " + isPalindrome(word));
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
-            word = "aa";
-            //Console.WriteLine(word + " " + isPalindrome(word));
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
-            word = "abc";
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
-            word = "aba";
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
-            word = "ababababababa";
-            Console.WriteLine(word + " " + isPalindromeEnhanced(word));
+            wordToCount = "starbucks";
+            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
 
             //char[] str = PrepUrlify("How do you do when I s a y things?");
@@ -69,17 +51,16 @@ namespace Practice_Questions
 
             //int[,] matrix = new int[4, 4] { { 2, 1, 9, 3 }, { 1, 2, 3, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 2 } };
 
-            Console.WriteLine("Matrix 1");
-            //int[,] matrix = new int[3,3] { { 1,0,1 }, { 1,1,1 }, { 1,0,1} };
-            int[,] matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
-            printMatrix(matrix);
+            //Console.WriteLine("Matrix 1");
+            //int[,] matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
+            //printMatrix(matrix);
 
             //matrix = rotateMatrix(matrix);
             ////printMatrix(matrix);
 
             //matrix = rotateMatrix(matrix);
             ////printMatrix(matrix);
-            
+
             //matrix = rotateMatrix(matrix);
             ////printMatrix(matrix);
 
@@ -93,14 +74,16 @@ namespace Practice_Questions
             //matrix = new int[3, 5] { { 2, 1, 1, 1, 1 }, { 1, 1, 3, 1, 0 }, { 1, 3, 2, 1, 0 } };
             //printMatrix(matrix);
 
-            matrix = zeroMatrix(matrix);
-            printMatrix(matrix);
+            //matrix = zeroMatrix(matrix);
+            //printMatrix(matrix);
 
-            matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
-            matrix = zeroMatrixImproved(matrix);
-            printMatrix(matrix);
+            //matrix = new int[4, 4] { { 0, 1, 9, 3 }, { 1, 2, 2, 1 }, { 1, 3, 2, 1 }, { 3, 1, 1, 0 } };
+            //matrix = zeroMatrixImproved(matrix);
+            //printMatrix(matrix);
 
-            CollectionsPractice();
+            //CollectionsPractice();
+
+
             //int a = 10;
             //int b = 12;
             //Console.WriteLine("OR: " + BitWiseOperation(BitWiseOperator.Or, a, b));
@@ -121,8 +104,8 @@ namespace Practice_Questions
             //Console.WriteLine(IsUniqueStrinAlt("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
 
 
-            Console.WriteLine(isRotation("rotation","ionrotat"));
-            Console.WriteLine(isRotation("rotation", "ionrott"));
+            //Console.WriteLine(isRotation("rotation","ionrotat"));
+            //Console.WriteLine(isRotation("rotation", "ionrott"));
         }
 
         [Test]
@@ -130,6 +113,40 @@ namespace Practice_Questions
         {
             Assert.AreEqual("abc", "abc");
         }
+
+        //TODO make generic!
+        public static int countPermutations(string str)
+        {
+            int permutations = calcPermutation(str.Length);
+            Dictionary<int, int> frequencies = new Dictionary<int, int>();
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                if(!frequencies.ContainsKey(str[i]))
+                    frequencies.Add(str[i], 1);
+                else
+                    frequencies[str[i]]++;
+            }
+            int redundantPermutations = 1;
+            foreach(var frequency in frequencies)
+            {
+                if(frequency.Value > 1)
+                    redundantPermutations *= calcPermutation(frequency.Value);
+            }
+            return permutations / redundantPermutations;
+        }
+
+        public static int calcPermutation(int multiplyBy, int permutations = 1)
+        {
+            if (multiplyBy == 1) //base case of 1
+            {
+                return permutations;
+            }
+            return calcPermutation(multiplyBy - 1, permutations * multiplyBy) ;
+
+        }
+
+
 
         public static void printMatrix(int[,] mat)
         {
