@@ -30,7 +30,7 @@ namespace Practice_Questions
             wordToCount = "abba zabba";
             Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "starbucks";
+            wordToCount = "mississippi";
             Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
 
