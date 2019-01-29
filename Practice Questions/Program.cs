@@ -830,4 +830,31 @@ namespace Practice_Questions
         }
 
     }
+
+    public class LinkedList
+    {
+
+        public LinkedList()
+        {
+            Node head = new Node();
+        }
+
+        private class Node
+        {
+            int data;
+
+            public Node()
+            {
+                data = 0;
+            }
+
+            public Node(int data)
+            {
+                this.data = data;
+            }
+
+        }
+    }
+
+
 }
