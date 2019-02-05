@@ -6,7 +6,6 @@ c:\users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Pr
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.framework.dll
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.framework.pdb
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.framework.xml
-C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\obj\Debug\Practice Questions.csprojResolveAssemblyReference.cache
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\NUnit3.TestAdapter.dll
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\NUnit3.TestAdapter.pdb
 C:\Users\joecampbell\documents\visual studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\nunit.engine.dll

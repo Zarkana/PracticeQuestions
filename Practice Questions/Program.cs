@@ -15,6 +15,24 @@ namespace Practice_Questions
 
         static void Main(string[] args)
         {
+
+            //MyGeneric<string> name = new MyGeneric<string>();
+            //name.data = "A string value";
+
+            //MyGeneric<float> version = new MyGeneric<float>();
+            //version.data = 5.0F;
+
+            //Console.WriteLine(name.data);// displays “A string value”         
+            //Console.WriteLine(version.data);// displays 5
+
+            //LinkedList<int> myList = new LinkedList<int>();
+
+            //myList.AddHead(3);
+            //myList.AddHead(1);
+            //myList.AddHead(1);
+
+            //myList.PrintList();
+
             String wordToCount = "aa";
             Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
@@ -830,31 +848,5 @@ namespace Practice_Questions
         }
 
     }
-
-    public class LinkedList
-    {
-
-        public LinkedList()
-        {
-            Node head = new Node();
-        }
-
-        private class Node
-        {
-            int data;
-
-            public Node()
-            {
-                data = 0;
-            }
-
-            public Node(int data)
-            {
-                this.data = data;
-            }
-
-        }
-    }
-
 
 }
