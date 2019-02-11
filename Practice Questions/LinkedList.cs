@@ -12,17 +12,19 @@ namespace Practice_Questions
         public T data;
     }
 
-
-    public class LinkedList<T>
+    public class SinglelyLinkedList<T>
     {
-        Node head;
-        Node tail;
+        Node Head;
+        Node Tail;
+        //public int Size();
+        public int Size { get; private set; }
 
         //public LinkedList();
-        public LinkedList()
+        public SinglelyLinkedList()
         {
-            Node head = null;
-            Node tail = null;
+            Head = null;
+            Tail = null;
+            Size = 0;
         }
 
         //public LinkedList(Collection<T> c);
@@ -31,45 +33,226 @@ namespace Practice_Questions
         //public T GetFirst();
         public T GetFirst()
         {
-            return head.data;
+            return Head.data;
         }
 
         //public T GetLast();
         public T GetLast()
         {
-            return tail.data;
+            return Tail.data;
         }
 
         //public T RemoveFirst();
-        //TODO
+        public T RemoveFirst()
+        {
+            if(Head != null)
+            {            
+                T data = Head.data;
+                Tail.next = Head.next;
+                Head = Head.next;
+                if (Size > 0)
+                    Size--;
+                if (Size == 0)
+                {
+                    Head = null;
+                    Tail = null;
+                }
+                return data;
+            }
+            if (Size > 0)
+                Size--;
+            if (Size == 0)
+            {
+                Head = null;
+                Tail = null;
+            }
+            return default(T);
+        }
 
         //public T RemoveLast();
-        //TODO
+        public T RemoveLast()
+        {            
+            if (Tail != null)
+            {
+                Node current = Head;
+                while (!current.next.Equals(Tail))
+                {
+                    current = current.next;
+                }
+                Node tailPrev = current;
+
+                T data = Tail.data;
+                tailPrev.next = Tail.next;
+                Tail = tailPrev;
+                if (Size > 0)
+                    Size--;
+                if (Size == 0)
+                {
+                    Head = null;
+                    Tail = null;
+                }
+                return data;
+            }
+            if(Size > 0)
+                Size--;
+            if (Size == 0)
+            {
+                Head = null;
+                Tail = null;
+            }
+            return default(T);
+        }
+
+        public T RemoveAt(int index)
+        {
+            if(Head != null)
+            {            
+                Node current = Head;
+                for(int i = 0; i < index; i++)
+                {
+                    current = current.next;
+                }
+                return RemoveNode(current);
+            }
+            return default(T);
+        }
 
         //public void AddFirst(T o);
         public void AddFirst(T o)
         {
             Node add = new Node(o);
-            if (head == null)
+            if (Head == null)
             {
-                head = add;
-                tail = add;
+                Head = add;
+                Head.next = Tail;
+                Tail = add;
+                Tail.next = Head;
+                Size++;
                 return; 
             }
-            add.next = head.next;
-            tail.next = add;
-            head = add;
+            add.next = Head;
+            Tail.next = add;
+            Head = add;
+            Size++;
         }
 
         //public void AddLast(T o);
-        //TODO
+        public void AddLast(T o)
+        {
+            Node add = new Node(o);
+            if (Head == null)
+            {
+                AddFirst(o);
+                return;
+                //Head = add;
+                //Head.next = Tail;
+                //Tail = add;
+                //Tail.next = Head;
+                //Size++;
+                //return;
+            }
 
-        //public int Size();
-        //TODO
+            Node current = Head;
+            while(!current.next.Equals(Tail))
+            {
+                current = current.next;
+            }
+
+            add.next = Head;
+            Tail.next = add;
+            Tail = add;
+            Size++;
+        }
+        
+        public void RemoveDuplicates()
+        {
+            List<T> unique = new List<T>();
+            Node current = Head;
+
+            while(!current.Equals(Tail))
+            {
+                if (!unique.Contains(current.data))
+                {
+                    unique.Add(current.data);
+                }
+                current = current.next;
+            }
+            //If Tail has unique element
+            if (!unique.Contains(current.data))
+            {
+                unique.Add(current.data);
+            }
+
+            for (int i = unique.Count; i > 0; i--)
+            {
+                current = Head;
+                T compare = unique[0];
+                unique.RemoveAt(0);
+                bool found = false;
+                while(!current.Equals(Tail))
+                {
+                    if (found && current.data.Equals(compare))
+                    {
+                        RemoveNode(current);
+                    }
+                    else if (current.data.Equals(compare))
+                    {
+                        found = true;
+                    }
+                    current = current.next;
+                }
+                if (found && current.data.Equals(compare))
+                {
+                    RemoveNode(current);
+                }
+            }
+        }        
+
+        private T RemoveNode(Node toRemove)
+        {
+            if (Size == 1)
+            {
+                Head = null;
+                Tail = null;
+                return toRemove.data;
+            }
+            else
+            {
+                if (toRemove.Equals(Tail))
+                {
+                    Node prev = Head;
+                    while (!prev.next.Equals(Tail))
+                    {
+                        prev = prev.next;
+                    }
+                    prev.next = Head;
+                    Tail = prev;
+                    Size--;
+                    return toRemove.data;
+                }
+                else if (toRemove.Equals(Head))
+                {
+                    Tail.next = Head.next;
+                    Head = Head.next;
+                    Size--;
+                    return toRemove.data;
+                }
+                else
+                {
+                    Node prev = Head;
+                    while (!prev.next.Equals(toRemove) && !prev.next.Equals(Tail))
+                    {
+                        prev = prev.next;
+                    }
+                    prev.next = toRemove.next;
+                    Size--;
+                    return toRemove.data;
+                }
+            }
+        }
 
         //public void Clear();
         //TODO
-
 
 
         //public void AddHead(T t)
