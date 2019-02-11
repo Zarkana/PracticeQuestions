@@ -206,7 +206,36 @@ namespace Practice_Questions
                     RemoveNode(current);
                 }
             }
-        }        
+        }
+        
+        public void RemoveDuplicatesNoBuffer()
+        {
+            RemoveDuplicatesRecursive(Head);
+        }
+
+        private void RemoveDuplicatesRecursive(Node start)
+        {
+            Node current = start.next;
+            while(!current.Equals(Tail))
+            {
+                if(start.data.Equals(current.data))
+                {
+                    RemoveNode(current);
+                }
+                current = current.next;
+            }
+            //If Tail
+            if (start.data.Equals(current.data))
+            {
+                RemoveNode(current);
+            }
+
+            if (start.Equals(Tail))
+            {
+                return;
+            }
+            RemoveDuplicatesRecursive(start.next);
+        }
 
         private T RemoveNode(Node toRemove)
         {

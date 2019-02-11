@@ -213,6 +213,62 @@ namespace Practice_Questions
             Assert.AreEqual(myCharList.RemoveFirst(), 'c');
             Assert.AreEqual(myCharList.RemoveFirst(), 'b');
             Assert.AreEqual(myCharList.RemoveFirst(), 'a');
+            Assert.AreEqual(myCharList.RemoveLast(), '\0');
+
+        }
+
+        [Test]
+        public static void RemoveDuplicatesNoBuffer()
+        {
+            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            myStringList.AddFirst("first");
+            myStringList.AddFirst("second");
+            myStringList.AddFirst("third");
+            myStringList.AddFirst("third");
+            myStringList.AddFirst("GOTCHA");
+            myStringList.AddFirst("third");
+            myStringList.AddFirst("third");
+            myStringList.AddFirst("third");
+            myStringList.AddFirst("fourth");
+            Assert.AreEqual(myStringList.Size, 9);
+
+            myStringList.RemoveDuplicatesNoBuffer();
+
+            Assert.AreEqual(myStringList.Size, 5);
+            Assert.AreEqual(myStringList.RemoveFirst(), "fourth");
+            Assert.AreEqual(myStringList.RemoveFirst(), "third");
+            Assert.AreEqual(myStringList.RemoveFirst(), "GOTCHA");
+            Assert.AreEqual(myStringList.RemoveFirst(), "second");
+            Assert.AreEqual(myStringList.RemoveFirst(), "first");
+            Assert.AreEqual(myStringList.RemoveFirst(), null);
+
+
+            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            myIntList.AddFirst(1);
+            myIntList.AddFirst(1);
+            Assert.AreEqual(myIntList.Size, 2);
+
+            myIntList.RemoveDuplicatesNoBuffer();
+
+            Assert.AreEqual(myIntList.Size, 1);
+            Assert.AreEqual(myIntList.RemoveFirst(), 1);
+            Assert.AreEqual(myIntList.RemoveFirst(), 0);
+
+            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            myCharList.AddFirst('a');
+            myCharList.AddFirst('a');
+            myCharList.AddFirst('a');
+            myCharList.AddFirst('b');
+            myCharList.AddFirst('b');
+            myCharList.AddFirst('c');
+            Assert.AreEqual(myCharList.Size, 6);
+
+            myCharList.RemoveDuplicatesNoBuffer();
+
+            Assert.AreEqual(myCharList.Size, 3);
+            Assert.AreEqual(myCharList.RemoveFirst(), 'c');
+            Assert.AreEqual(myCharList.RemoveFirst(), 'b');
+            Assert.AreEqual(myCharList.RemoveFirst(), 'a');
             Assert.AreEqual(myCharList.RemoveLast(), '\0');            
 
         }
