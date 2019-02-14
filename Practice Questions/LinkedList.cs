@@ -42,6 +42,7 @@ namespace Practice_Questions
             return Tail.data;
         }
 
+
         //public T RemoveFirst();
         public T RemoveFirst()
         {
@@ -105,6 +106,7 @@ namespace Practice_Questions
 
         public T RemoveAt(int index)
         {
+            //TODO: implement like KthLast
             if(Head != null)
             {            
                 Node current = Head;
@@ -115,6 +117,49 @@ namespace Practice_Questions
                 return RemoveNode(current);
             }
             return default(T);
+        }
+
+        public T RemoveKthElement()
+        {
+
+            return default(T);
+        }
+
+        public T RemoveKthLastElement(int k)
+        {
+            int index = 0;
+            Node kth = null;
+            Node current = Head;
+            if (k+1 > Size)
+            {
+                throw new ArgumentOutOfRangeException("k went beyond Tail");
+            }
+            while (!current.Equals(Tail))
+            {
+                if (index >= k)
+                {
+                    if(kth == null)
+                    {
+                        kth = Head;
+                    }
+                    else
+                    {
+                        kth = kth.next;
+                    }
+                }
+                index++;
+                current = current.next;
+            }
+            if (kth == null)
+            {
+                kth = current;
+            }
+            else
+            {
+                kth = kth.next;
+            }
+            RemoveNode(kth);
+            return kth.data;
         }
 
         //public void AddFirst(T o);
@@ -210,7 +255,7 @@ namespace Practice_Questions
         
         public void RemoveDuplicatesNoBuffer()
         {
-            RemoveDuplicatesRecursive(Head);
+            RemoveDuplicatesIterative(Head);
         }
 
         private void RemoveDuplicatesRecursive(Node start)
@@ -237,13 +282,37 @@ namespace Practice_Questions
             RemoveDuplicatesRecursive(start.next);
         }
 
+        private void RemoveDuplicatesIterative(Node start)
+        {
+            Node current = start.next;
+            while (!start.Equals(Tail))
+            {
+                while (!current.Equals(Tail))
+                {
+                    if (start.data.Equals(current.data))
+                    {
+                        RemoveNode(current);
+                    }
+                    current = current.next;
+                }
+                //If Tail
+                if (start.data.Equals(current.data))
+                {
+                    RemoveNode(current);
+                }
+                start = start.next;
+                current = start.next;
+            }
+        }
+
         private T RemoveNode(Node toRemove)
         {
             if (Size == 1)
             {
                 Head = null;
                 Tail = null;
-                return toRemove.data;
+                Size--;
+                return toRemove.data;                
             }
             else
             {

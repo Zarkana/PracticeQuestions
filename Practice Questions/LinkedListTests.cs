@@ -38,69 +38,69 @@ namespace Practice_Questions
 
         [Test]
         public static void AddFirstRemoveFirst()
-        {           
+        {
             SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
             myStringList.AddFirst("abc");
-            Assert.AreEqual(myStringList.Size, 1);
+            Assert.AreEqual(1, myStringList.Size);
 
             myStringList.AddFirst("abcde");
-            Assert.AreEqual(myStringList.Size, 2);
+            Assert.AreEqual(2, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveFirst(), "abcde");
-            Assert.AreEqual(myStringList.Size, 1);
+            Assert.AreEqual("abcde", myStringList.RemoveFirst());
+            Assert.AreEqual(1, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveFirst(), "abc");
-            Assert.AreEqual(myStringList.Size, 0);
+            Assert.AreEqual("abc", myStringList.RemoveFirst());
+            Assert.AreEqual(0, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveFirst(), null);
-            Assert.AreEqual(myStringList.Size, 0);
+            Assert.AreEqual(null, myStringList.RemoveFirst());
+            Assert.AreEqual(0, myStringList.Size);
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();            
+            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
             myIntList.AddFirst(1);
-            Assert.AreEqual(myIntList.Size, 1);
+            Assert.AreEqual(1, myIntList.Size);
 
             myIntList.AddFirst(2);
-            Assert.AreEqual(myIntList.Size, 2);
+            Assert.AreEqual(2, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveFirst(), 2);
-            Assert.AreEqual(myIntList.Size, 1);
+            Assert.AreEqual(2, myIntList.RemoveFirst());
+            Assert.AreEqual(1, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveFirst(), 1);
-            Assert.AreEqual(myIntList.Size, 0);
+            Assert.AreEqual(1, myIntList.RemoveFirst());
+            Assert.AreEqual(0, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveFirst(), 0);
-            Assert.AreEqual(myIntList.Size, 0);
+            Assert.AreEqual(0, myIntList.RemoveFirst());
+            Assert.AreEqual(0, myIntList.Size);
 
             SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
             myCharList.AddFirst('a');
-            Assert.AreEqual(myCharList.Size, 1);
+            Assert.AreEqual(1, myCharList.Size);
 
             myCharList.AddFirst('b');
-            Assert.AreEqual(myCharList.Size, 2);
+            Assert.AreEqual(2, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveFirst(), 'b');
-            Assert.AreEqual(myCharList.Size, 1);
+            Assert.AreEqual(1, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveFirst(), 'a');
-            Assert.AreEqual(myCharList.Size, 0);
+            Assert.AreEqual(0, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveFirst(), '\0');
-            Assert.AreEqual(myCharList.Size, 0);
+            Assert.AreEqual(0, myCharList.Size);
 
         }
-        
+
         [Test]
         public static void AddLastGetLast()
         {
             SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
             myStringList.AddLast("abc");
             myStringList.AddLast("abcde");
-            Assert.AreEqual(myStringList.GetLast(), "abcde");
+            Assert.AreEqual("abcde", myStringList.GetLast());
 
             SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
             myIntList.AddLast(1);
             myIntList.AddLast(2);
-            Assert.AreEqual(myIntList.GetLast(), 2);
+            Assert.AreEqual(2, myIntList.GetLast());
 
             SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
             myCharList.AddLast('a');
@@ -113,52 +113,52 @@ namespace Practice_Questions
         {
             SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
             myStringList.AddLast("abc");
-            Assert.AreEqual(myStringList.Size, 1);
+            Assert.AreEqual(1, myStringList.Size);
 
             myStringList.AddLast("abcde");
-            Assert.AreEqual(myStringList.Size, 2);
+            Assert.AreEqual(2, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveLast(), "abcde");
-            Assert.AreEqual(myStringList.Size, 1);
+            Assert.AreEqual("abcde", myStringList.RemoveLast());
+            Assert.AreEqual(1, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveLast(), "abc");
-            Assert.AreEqual(myStringList.Size, 0);
+            Assert.AreEqual("abc", myStringList.RemoveLast());
+            Assert.AreEqual(0, myStringList.Size);
 
-            Assert.AreEqual(myStringList.RemoveLast(), null);
-            Assert.AreEqual(myStringList.Size, 0);
+            Assert.AreEqual(null, myStringList.RemoveLast());
+            Assert.AreEqual(0, myStringList.Size);
 
             SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
             myIntList.AddLast(1);
-            Assert.AreEqual(myIntList.Size, 1);
+            Assert.AreEqual(1, myIntList.Size);
 
             myIntList.AddLast(2);
-            Assert.AreEqual(myIntList.Size, 2);
+            Assert.AreEqual(2, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveLast(), 2);
-            Assert.AreEqual(myIntList.Size, 1);
+            Assert.AreEqual(2, myIntList.RemoveLast());
+            Assert.AreEqual(1, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveLast(), 1);
-            Assert.AreEqual(myIntList.Size, 0);
+            Assert.AreEqual(1, myIntList.RemoveLast());
+            Assert.AreEqual(0, myIntList.Size);
 
-            Assert.AreEqual(myIntList.RemoveLast(), 0);
-            Assert.AreEqual(myIntList.Size, 0);
+            Assert.AreEqual(0, myIntList.RemoveLast());
+            Assert.AreEqual(0, myIntList.Size);
 
             SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
             myCharList.AddLast('a');
-            Assert.AreEqual(myCharList.Size, 1);
+            Assert.AreEqual(1, myCharList.Size);
 
             myCharList.AddLast('b');
-            Assert.AreEqual(myCharList.Size, 2);
+            Assert.AreEqual(2, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveLast(), 'b');
-            Assert.AreEqual(myCharList.Size, 1);
+            Assert.AreEqual(1, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveLast(), 'a');
-            Assert.AreEqual(myCharList.Size, 0);
+            Assert.AreEqual(0, myCharList.Size);
 
             Assert.AreEqual(myCharList.RemoveLast(), '\0');
-            Assert.AreEqual(myCharList.Size, 0);
-            
+            Assert.AreEqual(0, myCharList.Size);
+
         }
 
         [Test]
@@ -174,29 +174,29 @@ namespace Practice_Questions
             myStringList.AddFirst("third");
             myStringList.AddFirst("third");
             myStringList.AddFirst("fourth");
-            Assert.AreEqual(myStringList.Size, 9);
+            Assert.AreEqual(9, myStringList.Size);
 
             myStringList.RemoveDuplicates();
 
-            Assert.AreEqual(myStringList.Size, 5);
-            Assert.AreEqual(myStringList.RemoveFirst(), "fourth");
-            Assert.AreEqual(myStringList.RemoveFirst(), "third");
-            Assert.AreEqual(myStringList.RemoveFirst(), "GOTCHA");
-            Assert.AreEqual(myStringList.RemoveFirst(), "second");
-            Assert.AreEqual(myStringList.RemoveFirst(), "first");
-            Assert.AreEqual(myStringList.RemoveFirst(), null);
+            Assert.AreEqual(5, myStringList.Size);
+            Assert.AreEqual("fourth", myStringList.RemoveFirst());
+            Assert.AreEqual("third", myStringList.RemoveFirst());
+            Assert.AreEqual("GOTCHA", myStringList.RemoveFirst());
+            Assert.AreEqual("second", myStringList.RemoveFirst());
+            Assert.AreEqual("first", myStringList.RemoveFirst());
+            Assert.AreEqual(null, myStringList.RemoveFirst());
 
 
             SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             myIntList.AddFirst(1);
-            Assert.AreEqual(myIntList.Size, 2);
+            Assert.AreEqual(2, myIntList.Size);
 
             myIntList.RemoveDuplicates();
 
-            Assert.AreEqual(myIntList.Size, 1);
-            Assert.AreEqual(myIntList.RemoveFirst(), 1);
-            Assert.AreEqual(myIntList.RemoveFirst(), 0);
+            Assert.AreEqual(1, myIntList.Size);
+            Assert.AreEqual(1, myIntList.RemoveFirst());
+            Assert.AreEqual(0, myIntList.RemoveFirst());
 
             SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
             myCharList.AddFirst('a');
@@ -205,11 +205,11 @@ namespace Practice_Questions
             myCharList.AddFirst('b');
             myCharList.AddFirst('b');
             myCharList.AddFirst('c');
-            Assert.AreEqual(myCharList.Size, 6);
+            Assert.AreEqual(6, myCharList.Size);
 
             myCharList.RemoveDuplicates();
 
-            Assert.AreEqual(myCharList.Size, 3);
+            Assert.AreEqual(3, myCharList.Size);
             Assert.AreEqual(myCharList.RemoveFirst(), 'c');
             Assert.AreEqual(myCharList.RemoveFirst(), 'b');
             Assert.AreEqual(myCharList.RemoveFirst(), 'a');
@@ -230,29 +230,29 @@ namespace Practice_Questions
             myStringList.AddFirst("third");
             myStringList.AddFirst("third");
             myStringList.AddFirst("fourth");
-            Assert.AreEqual(myStringList.Size, 9);
+            Assert.AreEqual(9, myStringList.Size);
 
             myStringList.RemoveDuplicatesNoBuffer();
 
-            Assert.AreEqual(myStringList.Size, 5);
-            Assert.AreEqual(myStringList.RemoveFirst(), "fourth");
-            Assert.AreEqual(myStringList.RemoveFirst(), "third");
-            Assert.AreEqual(myStringList.RemoveFirst(), "GOTCHA");
-            Assert.AreEqual(myStringList.RemoveFirst(), "second");
-            Assert.AreEqual(myStringList.RemoveFirst(), "first");
-            Assert.AreEqual(myStringList.RemoveFirst(), null);
+            Assert.AreEqual(5, myStringList.Size);
+            Assert.AreEqual("fourth", myStringList.RemoveFirst());
+            Assert.AreEqual("third", myStringList.RemoveFirst());
+            Assert.AreEqual("GOTCHA", myStringList.RemoveFirst());
+            Assert.AreEqual("second", myStringList.RemoveFirst());
+            Assert.AreEqual("first", myStringList.RemoveFirst());
+            Assert.AreEqual(null, myStringList.RemoveFirst());
 
 
             SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             myIntList.AddFirst(1);
-            Assert.AreEqual(myIntList.Size, 2);
+            Assert.AreEqual(2, myIntList.Size);
 
             myIntList.RemoveDuplicatesNoBuffer();
 
-            Assert.AreEqual(myIntList.Size, 1);
-            Assert.AreEqual(myIntList.RemoveFirst(), 1);
-            Assert.AreEqual(myIntList.RemoveFirst(), 0);
+            Assert.AreEqual(1, myIntList.Size);
+            Assert.AreEqual(1, myIntList.RemoveFirst());
+            Assert.AreEqual(0, myIntList.RemoveFirst());
 
             SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
             myCharList.AddFirst('a');
@@ -261,15 +261,15 @@ namespace Practice_Questions
             myCharList.AddFirst('b');
             myCharList.AddFirst('b');
             myCharList.AddFirst('c');
-            Assert.AreEqual(myCharList.Size, 6);
+            Assert.AreEqual(6, myCharList.Size);
 
             myCharList.RemoveDuplicatesNoBuffer();
 
-            Assert.AreEqual(myCharList.Size, 3);
+            Assert.AreEqual(3, myCharList.Size);
             Assert.AreEqual(myCharList.RemoveFirst(), 'c');
             Assert.AreEqual(myCharList.RemoveFirst(), 'b');
             Assert.AreEqual(myCharList.RemoveFirst(), 'a');
-            Assert.AreEqual(myCharList.RemoveLast(), '\0');            
+            Assert.AreEqual(myCharList.RemoveLast(), '\0');
 
         }
 
@@ -280,13 +280,104 @@ namespace Practice_Questions
             myStringList.AddFirst("one");
             myStringList.AddFirst("two");
             myStringList.AddFirst("three");
-            myStringList.RemoveAt(3);
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("three", myStringList.RemoveAt(0));
+            Assert.AreEqual("two", myStringList.RemoveAt(0));
+            Assert.AreEqual("one", myStringList.RemoveAt(0));
+            Assert.AreEqual(0, myStringList.Size);
 
-            //GetAt
+            myStringList.AddFirst("one");
+            myStringList.AddFirst("two");
+            myStringList.AddFirst("three");
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("one", myStringList.RemoveAt(2));
+            Assert.AreEqual("two", myStringList.RemoveAt(1));
+            Assert.AreEqual("three", myStringList.RemoveAt(0));
+            Assert.AreEqual(0, myStringList.Size);
 
+            myStringList.AddFirst("one");
+            myStringList.AddFirst("two");
+            myStringList.AddFirst("three");
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("two", myStringList.RemoveAt(1));
+            Assert.AreEqual("one", myStringList.RemoveAt(1));
+            Assert.AreEqual("three", myStringList.RemoveAt(0));
+            Assert.AreEqual(0, myStringList.Size);
+
+            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            myIntList.AddFirst(1);
+            myIntList.AddFirst(2);
+            myIntList.AddFirst(3);
+            Assert.AreEqual(3, myIntList.Size);
+            Assert.AreEqual(3, myIntList.RemoveAt(0));
+            Assert.AreEqual(2, myIntList.RemoveAt(0));
+            Assert.AreEqual(1, myIntList.RemoveAt(0));
+            Assert.AreEqual(0, myIntList.Size);
+
+
+            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            myCharList.AddFirst('a');
+            myCharList.AddFirst('b');
+            myCharList.AddFirst('c');
+            Assert.AreEqual(3, myCharList.Size);
+            Assert.AreEqual('c', myCharList.RemoveAt(0));
+            Assert.AreEqual('b', myCharList.RemoveAt(0));
+            Assert.AreEqual('a', myCharList.RemoveAt(0));
+            Assert.AreEqual(0, myCharList.Size);
         }
 
+        [Test]
+        public static void RemoveKthLast()
+        {
+            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            myStringList.AddLast("one");
+            myStringList.AddLast("two");
+            myStringList.AddLast("three");
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("three", myStringList.RemoveKthLastElement(0));
+            Assert.AreEqual("two", myStringList.RemoveKthLastElement(0));
+            Assert.AreEqual("one", myStringList.RemoveKthLastElement(0));
+            Assert.AreEqual(0, myStringList.Size);
 
+            myStringList.AddLast("one");
+            myStringList.AddLast("two");
+            myStringList.AddLast("three");
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("three", myStringList.RemoveKthLastElement(2));
+            Assert.AreEqual("two", myStringList.RemoveKthLastElement(1));
+            Assert.AreEqual("one", myStringList.RemoveKthLastElement(0));
+            Assert.AreEqual(0, myStringList.Size);
+
+            myStringList.AddLast("one");
+            myStringList.AddLast("two");
+            myStringList.AddLast("three");
+            Assert.AreEqual(3, myStringList.Size);
+            Assert.AreEqual("two", myStringList.RemoveKthLastElement(1));
+            Assert.AreEqual("three", myStringList.RemoveKthLastElement(1));
+            Assert.AreEqual("one", myStringList.RemoveKthLastElement(0));
+            Assert.AreEqual(0, myStringList.Size);
+
+            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            myIntList.AddLast(1);
+            myIntList.AddLast(2);
+            myIntList.AddLast(3);
+            Assert.AreEqual(3, myIntList.Size);
+            Assert.AreEqual(3, myIntList.RemoveKthLastElement(0));
+            Assert.AreEqual(2, myIntList.RemoveKthLastElement(0));
+            Assert.AreEqual(1, myIntList.RemoveKthLastElement(0));
+            Assert.AreEqual(0, myIntList.Size);
+
+
+            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            myCharList.AddLast('a');
+            myCharList.AddLast('b');
+            myCharList.AddLast('c');
+            Assert.AreEqual(3, myCharList.Size);
+            Assert.AreEqual('c', myCharList.RemoveKthLastElement(0));
+            Assert.AreEqual('b', myCharList.RemoveKthLastElement(0));
+            Assert.AreEqual('a', myCharList.RemoveKthLastElement(0));
+            Assert.AreEqual(0, myCharList.Size);
+        }
 
 
     }
