@@ -16,19 +16,19 @@ namespace Practice_Questions
         [Test]
         public static void GetFirstEmpty()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             Assert.Throws<NullReferenceException>(() => myStringList.GetFirst());
         }
 
         [Test]
         public static void AddFirstGetFirst()
         {
-            SinglelyLinkedList<string> myEmptyList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myEmptyList = new CircularSinglelyLinkedList<string>();
             string add = "Test";
             myEmptyList.AddFirst(add);
             Assert.AreEqual(myEmptyList.GetFirst(), add);
 
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddFirst("Content");
             myStringList.AddFirst("Content2");
             add = "Test";
@@ -39,7 +39,7 @@ namespace Practice_Questions
         [Test]
         public static void AddFirstRemoveFirst()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddFirst("abc");
             Assert.AreEqual(1, myStringList.Size);
 
@@ -55,7 +55,7 @@ namespace Practice_Questions
             Assert.AreEqual(null, myStringList.RemoveFirst());
             Assert.AreEqual(0, myStringList.Size);
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             Assert.AreEqual(1, myIntList.Size);
 
@@ -71,7 +71,7 @@ namespace Practice_Questions
             Assert.AreEqual(0, myIntList.RemoveFirst());
             Assert.AreEqual(0, myIntList.Size);
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddFirst('a');
             Assert.AreEqual(1, myCharList.Size);
 
@@ -92,17 +92,17 @@ namespace Practice_Questions
         [Test]
         public static void AddLastGetLast()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddLast("abc");
             myStringList.AddLast("abcde");
             Assert.AreEqual("abcde", myStringList.GetLast());
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddLast(1);
             myIntList.AddLast(2);
             Assert.AreEqual(2, myIntList.GetLast());
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddLast('a');
             myCharList.AddLast('b');
             Assert.AreEqual(myCharList.GetLast(), 'b');
@@ -111,7 +111,7 @@ namespace Practice_Questions
         [Test]
         public static void AddLastRemoveLast()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddLast("abc");
             Assert.AreEqual(1, myStringList.Size);
 
@@ -127,7 +127,7 @@ namespace Practice_Questions
             Assert.AreEqual(null, myStringList.RemoveLast());
             Assert.AreEqual(0, myStringList.Size);
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddLast(1);
             Assert.AreEqual(1, myIntList.Size);
 
@@ -143,7 +143,7 @@ namespace Practice_Questions
             Assert.AreEqual(0, myIntList.RemoveLast());
             Assert.AreEqual(0, myIntList.Size);
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddLast('a');
             Assert.AreEqual(1, myCharList.Size);
 
@@ -164,7 +164,7 @@ namespace Practice_Questions
         [Test]
         public static void RemoveDuplicates()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddFirst("first");
             myStringList.AddFirst("second");
             myStringList.AddFirst("third");
@@ -187,7 +187,7 @@ namespace Practice_Questions
             Assert.AreEqual(null, myStringList.RemoveFirst());
 
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             myIntList.AddFirst(1);
             Assert.AreEqual(2, myIntList.Size);
@@ -198,7 +198,7 @@ namespace Practice_Questions
             Assert.AreEqual(1, myIntList.RemoveFirst());
             Assert.AreEqual(0, myIntList.RemoveFirst());
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddFirst('a');
             myCharList.AddFirst('a');
             myCharList.AddFirst('a');
@@ -220,7 +220,7 @@ namespace Practice_Questions
         [Test]
         public static void RemoveDuplicatesNoBuffer()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddFirst("first");
             myStringList.AddFirst("second");
             myStringList.AddFirst("third");
@@ -243,7 +243,7 @@ namespace Practice_Questions
             Assert.AreEqual(null, myStringList.RemoveFirst());
 
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             myIntList.AddFirst(1);
             Assert.AreEqual(2, myIntList.Size);
@@ -254,7 +254,7 @@ namespace Practice_Questions
             Assert.AreEqual(1, myIntList.RemoveFirst());
             Assert.AreEqual(0, myIntList.RemoveFirst());
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddFirst('a');
             myCharList.AddFirst('a');
             myCharList.AddFirst('a');
@@ -276,7 +276,18 @@ namespace Practice_Questions
         [Test]
         public static void RemoveAt()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            LinkedList<int> newList = new LinkedList<int>();
+
+
+            newList.AddFirst(1);
+            newList.AddFirst(2);
+
+            double average = newList.Average();
+
+
+
+
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddFirst("one");
             myStringList.AddFirst("two");
             myStringList.AddFirst("three");
@@ -304,7 +315,7 @@ namespace Practice_Questions
             Assert.AreEqual("three", myStringList.RemoveAt(0));
             Assert.AreEqual(0, myStringList.Size);
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddFirst(1);
             myIntList.AddFirst(2);
             myIntList.AddFirst(3);
@@ -315,7 +326,7 @@ namespace Practice_Questions
             Assert.AreEqual(0, myIntList.Size);
 
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddFirst('a');
             myCharList.AddFirst('b');
             myCharList.AddFirst('c');
@@ -329,7 +340,7 @@ namespace Practice_Questions
         [Test]
         public static void RemoveKthLast()
         {
-            SinglelyLinkedList<string> myStringList = new SinglelyLinkedList<string>();
+            CircularSinglelyLinkedList<string> myStringList = new CircularSinglelyLinkedList<string>();
             myStringList.AddLast("one");
             myStringList.AddLast("two");
             myStringList.AddLast("three");
@@ -357,7 +368,7 @@ namespace Practice_Questions
             Assert.AreEqual("one", myStringList.RemoveKthLastElement(0));
             Assert.AreEqual(0, myStringList.Size);
 
-            SinglelyLinkedList<int> myIntList = new SinglelyLinkedList<int>();
+            CircularSinglelyLinkedList<int> myIntList = new CircularSinglelyLinkedList<int>();
             myIntList.AddLast(1);
             myIntList.AddLast(2);
             myIntList.AddLast(3);
@@ -368,7 +379,7 @@ namespace Practice_Questions
             Assert.AreEqual(0, myIntList.Size);
 
 
-            SinglelyLinkedList<char> myCharList = new SinglelyLinkedList<char>();
+            CircularSinglelyLinkedList<char> myCharList = new CircularSinglelyLinkedList<char>();
             myCharList.AddLast('a');
             myCharList.AddLast('b');
             myCharList.AddLast('c');

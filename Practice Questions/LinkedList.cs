@@ -5,14 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Practice_Questions
-{
+{   
 
-    public class MyGeneric<T>
-    {
-        public T data;
-    }
-
-    public class SinglelyLinkedList<T>
+    public class CircularSinglelyLinkedList<T>
     {
         Node Head;
         Node Tail;
@@ -20,7 +15,7 @@ namespace Practice_Questions
         public int Size { get; private set; }
 
         //public LinkedList();
-        public SinglelyLinkedList()
+        public CircularSinglelyLinkedList()
         {
             Head = null;
             Tail = null;
@@ -462,9 +457,7 @@ namespace Practice_Questions
         //    }
         //    Console.WriteLine($"Value: {current.data}");
         //    Console.WriteLine("");
-        //}
-
-
+        //}            
 
         private class Node
         {
