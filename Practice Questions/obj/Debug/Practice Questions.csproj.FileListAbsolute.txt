@@ -26,3 +26,8 @@ C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Prac
 C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.exe
 C:\Users\Joes1\source\repos\practice-questions\Practice Questions\obj\Debug\Practice Questions.pdb
 C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\obj\Debug\Practice Questions.csprojResolveAssemblyReference.cache
+C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\Newtonsoft.Json.dll
+C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\Newtonsoft.Json.xml
+C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\WebDriver.dll
+C:\Users\joecampbell\Documents\Visual Studio 2015\Projects\Practice Questions\Practice Questions\bin\Debug\WebDriver.xml

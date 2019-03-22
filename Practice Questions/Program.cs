@@ -16,6 +16,20 @@ namespace Practice_Questions
         static void Main(string[] args)
         {
 
+            IPerson person = new Joe();
+
+            Joe me = new Joe();
+
+            me.AddFirst(2);
+
+            IPerson meToo = me;
+
+            meToo.AddFirst(3);
+
+            
+
+            //RemoteAPI.InitClient();
+
             //MyGeneric<string> name = new MyGeneric<string>();
             //name.data = "A string value";
 
@@ -33,23 +47,23 @@ namespace Practice_Questions
 
             //myList.PrintList();
 
-            String wordToCount = "aa";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //String wordToCount = "aa";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "ab";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //wordToCount = "ab";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "abc";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //wordToCount = "abc";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "ramona";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //wordToCount = "ramona";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "abba zabba";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //wordToCount = "abba zabba";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
-            wordToCount = "mississippi";
-            Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
+            //wordToCount = "mississippi";
+            //Console.WriteLine("The word " + wordToCount + " can be reordered in " + countPermutations(wordToCount) + " ways");
 
 
             //char[] str = PrepUrlify("How do you do when I s a y things?");
